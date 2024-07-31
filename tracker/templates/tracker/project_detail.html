@@ -1,0 +1,19 @@
+{% extends 'tracker/base.html' %}
+
+{% block title %}{{ project.name }}{% endblock %}
+
+{% block header %}{{ project.name }}{% endblock %}
+
+{% block content %}
+<p>{{ project.description }}</p>
+<h2>Issues</h2>
+<ul class="list-group">
+    {% for issue in project.issues.all %}
+        <li class="list-group-item">
+            <a href="{% url 'issue_detail' pk=issue.pk %}">{{ issue.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<a class="btn btn-primary mt-3" href="{% url 'create_issue' project_pk=project.pk %}">Create New Issue</a>
+<a class="btn btn-secondary mt-3" href="{% url 'project_list' %}">Back to Projects</a>
+{% endblock %}

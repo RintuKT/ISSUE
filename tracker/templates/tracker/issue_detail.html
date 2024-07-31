@@ -1,0 +1,12 @@
+{% extends 'tracker/base.html' %}
+
+{% block title %}{{ issue.title }}{% endblock %}
+
+{% block header %}{{ issue.title }}{% endblock %}
+
+{% block content %}
+<p>{{ issue.description }}</p>
+<p>Status: {{ issue.get_status_display }}</p>
+<p>Assigned to: {{ issue.assigned_to }}</p>
+<a class="btn btn-secondary mt-3" href="{% url 'project_detail' pk=issue.project.pk %}">Back to Project</a>
+{% endblock %}

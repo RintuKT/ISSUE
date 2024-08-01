@@ -1,9 +1,12 @@
 {% extends 'tracker/base.html' %}
+{% load static %}
 
 {% block title %}{{ project.name }}{% endblock %}
 
-{% block header %}{{ project.name }}{% endblock %}
-
+{% block header %}
+{{ project.name }}
+<img src="{% static 'tracker/images/Project_detail.jpg' %}" alt="{{ project.name }}" class="img-fluid mt-3">
+{% endblock %}
 {% block content %}
 <p>{{ project.description }}</p>
 <h2>Issues</h2>

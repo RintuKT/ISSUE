@@ -1,6 +1,21 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, Issue
 from .forms import ProjectForm, IssueForm
+from django.shortcuts import render,redirect
+from django.contrib.auth import logout
+from django.contrib.auth import login
+
+
+def home(request):
+    return render(request, 'tracker/home.html')
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'tracker/logout.html')
+
+def login_view(request):
+    login(request)
+    return render(request, 'tracker/login.html')
 
 def project_list(request):
     projects = Project.objects.all()

@@ -1,8 +1,12 @@
 {% extends 'tracker/base.html' %}
+{% load static %}
 
 {% block title %}Create Project{% endblock %}
 
-{% block header %}Create New Project{% endblock %}
+{% block header %}
+Create New
+<img src="{% static 'tracker/images/Projects.jpg' %}" alt="Create Project" class="img-fluid mt-3">
+{% endblock %}
 
 {% block content %}
 <form method="post">

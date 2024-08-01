@@ -1,0 +1,15 @@
+{% extends 'tracker/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+    <a class="btn btn-primary" href="{% url 'project_list' %}">View Projects</a>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to access your projects.</p>
+{% endif %}
+{% endblock %}

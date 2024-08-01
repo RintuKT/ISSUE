@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Issue Tracker{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tracker/style.css' %}">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'project_list' %}">Issue Tracker</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">Issue Tracker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,21 +24,32 @@
                     <a class="nav-link" href="{% url 'create_project' %}">Create Project</a>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
     </nav>
 
     <!-- Header -->
-    <header class="container mt-4">
+    <header class="container mt-4 text-white">
         <h1 class="text-center">{% block header %}Welcome to Issue Tracker{% endblock %}</h1>
     </header>
 
     <!-- Main Content -->
-    <div class="container mt-4">
+    <div class="container content-wrapper mt-4 text-white">
         {% block content %}{% endblock %}
     </div>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-3 mt-4">
+    <footer class="bg-dark text-center py-3 mt-4 text-white footer">
         <p>&copy; 2024 Issue Tracker. All rights reserved.</p>
     </footer>
 

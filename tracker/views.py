@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from .models import Project, Issue
 from .forms import ProjectForm, IssueForm, ProjectEditForm, IssueEditForm
 
@@ -71,6 +71,7 @@ def edit_issue(request, pk):
         form = IssueEditForm(instance=issue)
     return render(request, 'tracker/issue_form.html', {'form': form})
 
+@login_required
 def logout_view(request):
     logout(request)
-    return render(request, 'tracker/logout.html')
+    return redirect('login')  # Redirect to the login page after logout

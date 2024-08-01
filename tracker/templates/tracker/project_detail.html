@@ -17,6 +17,7 @@
     {% for issue in project.issues.all %}
         <li class="list-group-item">
             <a href="{% url 'issue_detail' pk=issue.pk %}">{{ issue.title }}</a>
+            <a class="btn btn-secondary btn-sm" href="{% url 'edit_issue' pk=issue.pk %}">Edit</a>
         </li>
     {% endfor %}
 </ul>

@@ -3,13 +3,35 @@
 
 {% block title %}Home{% endblock %}
 
-{% block header %}Home{% endblock %}
+{% block header %}
+Welcome to ADAPT Issue Tracker
+{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}!</p>
-    <a class="btn btn-primary" href="{% url 'project_list' %}">View Projects</a>
-{% else %}
-    <p>Please <a href="{% url 'login' %}">login</a> to access your projects.</p>
-{% endif %}
+<div class="home-container">
+    <div class="home-description">
+        <h2>About ADAPT</h2>
+        <p>ADAPT is a comprehensive issue tracking system designed to help you manage your projects and tasks efficiently. Whether you're working on a small project or a large-scale operation, ADAPT provides the tools you need to stay organized and on track.</p>
+    </div>
+    
+    <div class="home-images">
+        <img src="{% static 'tracker/images/manage.jpg' %}" alt="Project Management" class="home-image">
+        <img src="{% static 'tracker/images/Task.jpg' %}" alt="Task Tracking" class="home-image">
+    </div>
+
+    <div class="home-features">
+        <h2>Features</h2>
+        <ul>
+            <li>Real-time issue tracking</li>
+            <li>Project and task management</li>
+            <li>User assignments and notifications</li>
+            <li>Detailed reports and analytics</li>
+        </ul>
+    </div>
+
+    <div class="home-call-to-action">
+        <h2>Get Started</h2>
+        <p>Ready to streamline your project management? <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'create_project' %}">Create a new project</a> to get started with ADAPT.</p>
+    </div>
+</div>
 {% endblock %}

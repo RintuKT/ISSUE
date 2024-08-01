@@ -5,11 +5,12 @@
 
 {% block header %}
 {{ issue.title }}
-<img src="{% static 'tracker/images/Issue_detail.png' %}" alt="{{ issue.title }}" class="img-fluid mt-3">
 {% endblock %}
+
 {% block content %}
 <p>{{ issue.description }}</p>
 <p>Status: {{ issue.get_status_display }}</p>
 <p>Assigned to: {{ issue.assigned_to }}</p>
 <a class="btn btn-secondary mt-3" href="{% url 'project_detail' pk=issue.project.pk %}">Back to Project</a>
+<a class="btn btn-secondary mt-3" href="{% url 'edit_issue' pk=issue.pk %}">Edit Issue</a>
 {% endblock %}

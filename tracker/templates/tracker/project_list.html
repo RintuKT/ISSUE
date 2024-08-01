@@ -4,17 +4,21 @@
 {% block title %}Projects{% endblock %}
 
 {% block header %}
-<img src="{% static 'tracker/images/Projects.jpg' %}" alt="Projects" class="img-fluid mt-3">
+Projects
 {% endblock %}
-
 {% block content %}
-<h2>Projects</h2>
-<ul class="list-group">
-    {% for project in projects %}
-        <li class="list-group-item">
-            <a href="{% url 'project_detail' pk=project.pk %}">{{ project.name }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<a class="btn btn-primary mt-3" href="{% url 'create_project' %}">Create New Project</a>
+
+<img src="{% static 'tracker/images/Project.jpg' %}" alt="Project" class="home-image"><br>
+<br>
+
+<div class="projects-background">
+    <ul class="list-group">
+        {% for project in projects %}
+            <li class="list-group-item">
+                <a href="{% url 'project_detail' pk=project.pk %}">{{ project.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-primary mt-3" href="{% url 'create_project' %}">Create New Project</a>
+</div>
 {% endblock %}

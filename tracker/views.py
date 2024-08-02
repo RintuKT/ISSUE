@@ -43,9 +43,12 @@ def create_issue(request, project_pk):
             issue.project = project
             issue.save()
             return redirect('project_detail', pk=project.pk)
+        else:
+            print(f"Form errors: {form.errors}")  # Debugging line
     else:
         form = IssueForm()
-    return render(request, 'tracker/issue_form.html', {'form': form, 'project': project})
+    return render(request, 'tracker/issue_form.html', {'form': form, 'project': project, 'is_edit': False})
+
 
 @login_required
 def edit_project(request, pk):
@@ -67,11 +70,13 @@ def edit_issue(request, pk):
         if form.is_valid():
             form.save()
             return redirect('issue_detail', pk=issue.pk)
+        else:
+            print(f"Form errors: {form.errors}")  # Debugging line
     else:
         form = IssueEditForm(instance=issue)
-    return render(request, 'tracker/issue_form.html', {'form': form})
+    return render(request, 'tracker/edit_issue_form.html', {'form': form, 'issue': issue, 'project': issue.project, 'is_edit': True})
 
 @login_required
 def logout_view(request):
     logout(request)
-    return redirect('login')  # Redirect to the login page after logout
+    return redirect('login')

@@ -4,6 +4,9 @@ body {
     text-align: center;
     margin: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar-brand {
@@ -118,6 +121,57 @@ form .btn {
     background-size: cover;
     background-position: center;
     padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure footer is always at the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    flex-shrink: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.login-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;  /* Add space between the form and the footer */
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

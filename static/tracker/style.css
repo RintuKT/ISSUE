@@ -1,0 +1,177 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.list-group-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary, .btn-secondary {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    margin-top: 20px;
+    background-color: black;
+}
+
+.navbar, .footer {
+    width: 100%;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+form .btn {
+    display: block;
+    width: 100%;
+}
+
+.home-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.home-description, .home-features, .home-call-to-action {
+    margin-bottom: 40px;
+}
+
+.home-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.home-image {
+    width: 45%;
+    height: auto;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* New styles for background image */
+.projects-background {
+    background-image: url('../images/Projects.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure footer is always at the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    flex-shrink: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.login-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;  /* Add space between the form and the footer */
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

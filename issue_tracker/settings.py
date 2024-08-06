@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3vou!zo%4ytr$l28q!ua+wk(#y%)x&gz3&ow^z9@mte#xcuflj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -53,11 +53,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'issue_tracker.urls'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = '/MEDIA/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
-MEDIA_PATH = os.path.join(BASE_DIR,'media')
+MEDIA_URL='media/'
 
 TEMPLATES = [
     {
